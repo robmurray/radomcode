@@ -8,7 +8,7 @@ package com.wmb.algorithms.sorting;
  *
  *
  */
-public class BubbleSort {
+public class BubbleSort  implements SortInterface{
 
     public BubbleSort() {
     }

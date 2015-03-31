@@ -10,7 +10,7 @@ package com.wmb.algorithms.sorting;
  * inserting sorted items to correct position on the left
  *
  */
-public class InsertionSort {
+public class InsertionSort  implements SortInterface {
 
 
     public InsertionSort() {

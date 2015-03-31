@@ -16,7 +16,7 @@ package com.wmb.algorithms.sorting;
  */
 
 
-public class SelectionSort {
+public class SelectionSort  implements SortInterface{
 
     public SelectionSort() {
     }
