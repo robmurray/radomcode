@@ -22,20 +22,29 @@ public class SelectionSort {
     }
 
     public int[] sort(int[] targetArray) {
+
         int minIndex, temp;
         int targetArrayLength = targetArray.length;
 
         for (int sortedSublistIndex = 0; sortedSublistIndex < targetArrayLength - 1; sortedSublistIndex++) {
+
             minIndex = sortedSublistIndex;
-            for (int notSortedIndex = sortedSublistIndex + 1; notSortedIndex < targetArrayLength; notSortedIndex++)
-                if (targetArray[notSortedIndex] < targetArray[minIndex])
+
+            for (int notSortedIndex = sortedSublistIndex + 1; notSortedIndex < targetArrayLength; notSortedIndex++) {
+                if (targetArray[notSortedIndex] < targetArray[minIndex]) {
                     minIndex = notSortedIndex;
+                }
+            }
+
             if (minIndex != sortedSublistIndex) {
                 temp = targetArray[sortedSublistIndex];
                 targetArray[sortedSublistIndex] = targetArray[minIndex];
                 targetArray[minIndex] = temp;
             }
+
         }
+
         return targetArray;
     }
+
 }
