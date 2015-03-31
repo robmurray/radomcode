@@ -1,5 +1,13 @@
 package com.wmb.algorithms.sorting;
 
+/**
+ * Bubble sort
+ *
+ * probably the worst performing of the traditional sorting algorithms.
+ *      O(n^2) time complexity
+ *
+ *
+ */
 public class BubbleSort {
 
     public BubbleSort() {

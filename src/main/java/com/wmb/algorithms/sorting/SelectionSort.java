@@ -1,7 +1,7 @@
 package com.wmb.algorithms.sorting;
 
 /**
- * Selection sort O(n2) time complexity.
+ * Selection sort O(n^2) time complexity.
  *
  * The list is divided into two parts: items already sorted, item to be sorted. The sorted sub-list is
  * built left to right starting at index =0. initially the sorted sub list will be empty.
