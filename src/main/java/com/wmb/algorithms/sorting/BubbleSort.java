@@ -5,7 +5,7 @@ public class BubbleSort {
     public BubbleSort() {
     }
 
-    public int[] bubbleSort(int[] targetArray) {
+    public int[] sort(int[] targetArray) {
         if (targetArray == null || targetArray.length == 0) {
             return targetArray;
         }
