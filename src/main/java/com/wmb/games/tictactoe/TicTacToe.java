@@ -5,10 +5,15 @@ package com.wmb.games.tictactoe;
  */
 public class TicTacToe {
 
+    private static final int DEFAULT_SIZE = 3;
     private Players[][] boardArray;
     private int maxPlays;
     private int playCount;
     private int size;
+
+    public TicTacToe() {
+        this(DEFAULT_SIZE);
+    }
 
     public TicTacToe(int size) {
         boardArray = new Players[size][size];
@@ -16,7 +21,7 @@ public class TicTacToe {
         this.size=size;
     }
 
-    public void makeMove(Players player,int x,int y) throws OccupiedException,MoveOutOfBoundsException{
+    private void makeMove(Players player, int x, int y) throws OccupiedException, MoveOutOfBoundsException {
 
         if(x>this.size-1){
             throw new MoveOutOfBoundsException("X is out of bounds: "+x);
