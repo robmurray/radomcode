@@ -15,33 +15,6 @@ public class BinarySearchTest {
     private Integer[] sortedArray1 ={1,2,3,4,5,6,7,8,9,10};
     private int[] sortedArray2 ={1,2,3,4,5,6,7,8,9,10};
 
-    @Test
-    public void binarySearchFailTest(){
-        Integer targetValue = 12;
-        Integer valueReturned =null;
-
-
-        BinarySearch2 bs = new BinarySearch2();
-        valueReturned = bs.search(sortedArray1,targetValue);
-
-        assertEquals(valueReturned,null);
-
-
-    }
-
-    @Test
-    public void binarySearchPassTest(){
-        Integer targetValue = 3;
-        Integer valueReturned =null;
-
-
-        BinarySearch2 bs = new BinarySearch2();
-        valueReturned = bs.search(sortedArray1,targetValue);
-        assertEquals(targetValue,valueReturned);
-        //assertTrue("solution found",false);
-
-
-    }
 
     @Test
     public void binarySearchv2FailTest(){
