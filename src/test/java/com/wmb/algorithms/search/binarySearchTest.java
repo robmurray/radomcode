@@ -26,7 +26,7 @@ public class BinarySearchTest {
         valueReturned = bs.search(sortedArray2,targetValue);
 
         assertEquals(valueReturned,-1);
-
+ 
 
     }
 
