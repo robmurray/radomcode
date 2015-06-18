@@ -8,23 +8,30 @@ package com.wmb.algorithms.binarytree;
  */
 public class BinaryTree {
 
-    public Node insert(Node root, int key){
+    private Node root;
 
-        if(root == null) {
-            return new Node(key);
-        } else if (key < root.getKey()) {
-            return insert(root.getLeftNode(), key);
-        }else{
-            return insert(root.getRightNode(), key);
-        }
+
+    public void insert(int key){
+       root= insert(root, key);
     }
 
-    /**
-     * searches an ordered binary tree
-     * @param key
-     * @param node
-     * @return
-     */
+    protected Node insert(Node node, int key){
+
+        if(node == null) {
+            return  new Node(key);
+        } else if (key < node.getKey()) {
+            node.setLeftNode(insert(node.getLeftNode(), key));
+        }else{
+            node.setRightNode(insert(node.getRightNode(), key));
+        }
+        return node;
+    }
+
+
+    public Node searchRecursive(int key) {
+        return searchRecursive(key,root);
+    }
+
     public Node searchRecursive(int key, Node node) {
 
         if (node == null || node.getKey() == key) {
@@ -38,13 +45,12 @@ public class BinaryTree {
 
     }
 
-    /**
-     * searches an ordered binary tree
-     * @param key
-     * @param node
-     * @return
-     */
-    public Node searchIterative(int key, Node node) {
+
+    public Node searchIterative(int key) {
+        return  searchIterative(key,root);
+    }
+
+    private Node searchIterative(int key, Node node) {
         Node currentNode = node;
         while (currentNode != null) {
             if (currentNode.getKey() == key) {
@@ -57,5 +63,59 @@ public class BinaryTree {
         }
 
         return null;
+    }
+
+
+    public int size() {
+        return countNodes(root);
+    }
+    public int countNodes(Node node) {
+        if (node == null) {
+            return 0;
+        }
+        int count = 1;
+        count += countNodes(node.getLeftNode());
+        count += countNodes(node.getRightNode());
+        return count;
+    }
+
+    public String toStringPreOrder( ) {
+        return toStringPreOrder(root);
+    }
+    private String toStringPreOrder( Node node ) {
+        String ret="";
+        if ( node != null ) {
+
+            ret=Integer.toString(node.getKey())+ ",";
+            ret+=toStringPreOrder(node.getLeftNode());
+            ret+=toStringPreOrder( node.getRightNode() );
+        }
+        return ret;
+    }
+    public String toStringPostOrder( ) {
+        return  toStringPostOrder(root);
+    }
+    private String toStringPostOrder( Node node ) {
+        String ret="";
+        if ( node != null ) {
+            ret +=toStringPostOrder(node.getLeftNode());
+            ret +=toStringPostOrder(node.getRightNode());
+            ret+=Integer.toString(node.getKey())+",";
+        }
+        return ret;
+    }
+
+    public String toStringInOrder() {
+        return toStringInOrder(root);
+    }
+
+    private String toStringInOrder( Node node ) {
+        String ret = "";
+        if ( node != null ) {
+            ret += toStringInOrder(node.getLeftNode());
+            ret+=Integer.toString(node.getKey())+",";
+            ret +=toStringInOrder(node.getRightNode());
+        }
+        return ret;
     }
 }

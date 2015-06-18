@@ -1,4 +1,4 @@
-package com.wmb.equals;
+package com.wmb.misc;
 
 import org.junit.Test;
 

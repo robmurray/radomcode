@@ -4,101 +4,107 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 /**
  * Created by rob on 3/11/15.
  */
 public class BinaryTreeSearchTest {
-
-    public static Node rootTree;
-
-    {
-        rootTree = new Node(0);//
-        // init nodes
-
-        Node tree1 = new Node(1);//
-        Node tree2 = new Node(2);//
-        Node tree3 = new Node(3);//
-        Node tree4 = new Node(4);//
-        Node tree5 = new Node(5);//
-        Node tree6 = new Node(6);//
-        Node tree7 = new Node(7);//
-        Node tree8 = new Node(8);
-
-        // assemble
-        rootTree.setLeftNode(tree7);
-        rootTree.setRightNode(tree2);
-        //7
-        tree7.setLeftNode(tree3);
-        //2
-        tree2.setRightNode(tree5);
-        tree2.setLeftNode(tree6);
-        //5
-        tree5.setRightNode(tree8);
-
-        //8
-        tree8.setRightNode(tree4);
-        // tree2.setLeftNode(tree9);
+    @Test
+    public void searchIterativeFailTest() {
+        BinaryTree bt = buildTree();
+        Node returnedNode =bt.searchIterative(7);
+        assertNull(returnedNode);
 
     }
-
-
     @Test
-    public void searchSuccessTest() {
+    public void searchRecursiveiveFailTest() {
+        BinaryTree bt = buildTree();
+        Node returnedNode =bt.searchRecursive(7);
+
+        assertNull(returnedNode);
+
+    }
+    @Test
+    public void searchIterativeSuccessTest() {
+        BinaryTree bt = buildTree();
+        Node returnedNode =bt.searchIterative(7);
+
+        assertNotNull(returnedNode);
+        assertEquals(returnedNode.getKey(), 7);
+
+    }
+    @Test
+    public void searchRecursiveiveSuccessTest() {
+        BinaryTree bt = buildTree();
+        Node returnedNode =bt.searchRecursive(7);
+
+        assertNotNull(returnedNode);
+        assertEquals(returnedNode.getKey(), 7);
+
+    }
+    @Test
+    public void insertTest(){
+        int key =10;
         BinaryTree bt = new BinaryTree();
 
-        Node returnedNode = bt.searchRecursive(3, rootTree);
-        assertNotNull(returnedNode);
-        assertEquals(returnedNode.getKey(), 3);
+        bt.insert(key);
+        assertNotNull(bt.searchRecursive(key));
+        assertEquals(key,bt.searchRecursive(key).getKey());
+    }
 
+    @Test
+    public void insertTest2(){
+        BinaryTree bt = buildTree();
+        int key =1;
+        assertNotNull(bt.searchRecursive(key));
+        assertEquals(key,bt.searchRecursive(key).getKey());
+    }
+    @Test
+    public void countTest2(){
+        BinaryTree bt = buildTree();
+
+        assertEquals(5,bt.size());
     }
 
 
+    public BinaryTree buildTree(){
+        int key1 =10;
+        int key2 =1;
+        int key3 =100;
+        int key4 =11;
+        int key5 =7;
+        BinaryTree bt = new BinaryTree();
 
-
-/*
-    @Test
-    public void countTest(){
-
-        DFSManager manager = new DFSManager();
-
-        int count = manager.countNodes(rootTree);
-        int expectedCount = 8;
-        assertTrue(count == expectedCount);
-
-
+        bt.insert(key1);
+        bt.insert(key2);
+        bt.insert(key3);
+        bt.insert(key4);
+        bt.insert(key5);
+        return bt;
     }
 
     @Test
     public void preorderTest(){
-
-        DFSManager manager = new DFSManager();
-
-        String expectValue = "0 7 3 2 6 5 8 4";
-        String value=manager.preorderPrint(rootTree);
-        assertTrue(expectValue.equals(value.trim()));
+        String expected ="10,1,7,100,11,";
+        BinaryTree bt = buildTree();
+        System.out.println(bt.toStringPreOrder());
+        assertEquals(expected,bt.toStringPreOrder());
     }
-
 
     @Test
     public void postorderTest(){
-
-        DFSManager manager = new DFSManager();
-
-        String expectValue = "3 7 6 4 8 5 2 0";
-        String value=manager.postorderPrint(rootTree);
-        assertTrue(expectValue.equals(value.trim()));
+        String expected ="7,1,11,100,10,";
+        BinaryTree bt = buildTree();
+        System.out.println(bt.toStringPostOrder());
+        assertEquals(expected,bt.toStringPostOrder());
     }
+
     @Test
     public void inorderTest(){
-
-        DFSManager manager = new DFSManager();
-
-        String expectValue = "3 7 0 6 2 5 8 4";
-        String value=manager.inorderPrint(rootTree);
-        assertTrue(expectValue.equals(value.trim()));
-        DFSManager.inorderPrint2(rootTree);
+        String expected ="1,7,10,11,100,";
+        BinaryTree bt = buildTree();
+        System.out.println(bt.toStringInOrder());
+        assertEquals(expected,bt.toStringInOrder());
     }
-    */
-
 }
