@@ -1,6 +1,7 @@
 package com.wmb.patterns;
 
-import com.wb.com.wb.misc.patterns.models.*;
+
+import com.wmb.patterns.models.*;
 
 /**
  * Created by rob on 3/26/15.

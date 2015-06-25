@@ -67,6 +67,14 @@ public class BinaryTreeSearchTest {
         assertEquals(5,bt.size());
     }
 
+    @Test
+    public void deleteTest2(){
+        BinaryTree bt = buildTree();
+        bt.delete(11);
+        Node n =bt.searchRecursive(11);
+        assertNull(n);
+    }
+
 
     public BinaryTree buildTree(){
         int key1 =10;

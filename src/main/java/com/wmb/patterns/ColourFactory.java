@@ -1,8 +1,7 @@
 package com.wmb.patterns;
 
-import com.wb.com.wb.misc.patterns.models.*;
-import com.wb.com.wb.misc.patterns.models.Shape;
 
+import com.wmb.patterns.models.*;
 
 public class ColourFactory extends AbstractFactory {
 

@@ -27,6 +27,35 @@ public class BinaryTree {
         return node;
     }
 
+    public void delete(int key){
+        root = delete(key,root);
+
+    }
+    public Node delete(int key,Node node){
+
+        if(node == null){
+            return node;
+        }
+        if(key<node.getKey()){
+            node.setLeftNode(delete(key,node.getLeftNode()));
+        }else if(key>node.getKey()) {
+            node.setRightNode(delete(key, node.getRightNode()));
+        }else if(node.getLeftNode()!=null && node.getRightNode()!=null){
+            node.setKey(findMin(node.getRightNode()).getKey());
+            node.setRightNode(delete(node.getKey(),node.getRightNode()));
+        } else
+            node = ( node.getLeftNode() != null ) ? node.getLeftNode() : node.getRightNode();
+        return node;
+    }
+
+    private Node findMin( Node node )
+    {
+        if( node == null )
+            return null;
+        else if( node.getLeftNode() == null )
+            return node;
+        return findMin( node.getLeftNode() );
+    }
 
     public Node searchRecursive(int key) {
         return searchRecursive(key,root);

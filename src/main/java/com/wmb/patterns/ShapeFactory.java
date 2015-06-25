@@ -1,9 +1,10 @@
 package com.wmb.patterns;
 
-import com.wb.com.wb.misc.patterns.models.Circle;
-import com.wb.com.wb.misc.patterns.models.Shape;
-import com.wb.com.wb.misc.patterns.models.Square;
-import com.wb.com.wb.misc.patterns.models.Triangle;
+
+import com.wmb.patterns.models.Circle;
+import com.wmb.patterns.models.Shape;
+import com.wmb.patterns.models.Square;
+import com.wmb.patterns.models.Triangle;
 
 /**
  * Created by rob on 3/26/15.
