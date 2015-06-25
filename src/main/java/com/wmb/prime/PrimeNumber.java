@@ -7,6 +7,19 @@ package com.wmb.prime;
  */
 public class PrimeNumber {
 
+
+
+    public void printPrime(){
+
+        for(int counter = 2;counter<Integer.MAX_VALUE;counter++){
+
+            if(isPrimeimpl3(counter)){
+                System.out.println(counter);
+            }
+        }
+
+    }
+
     /**
      * not very efficient
      * @param number the integer to test

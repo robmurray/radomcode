@@ -4,6 +4,7 @@ import com.wmb.prime.PrimeNumber;
 import org.junit.Test;
 
 import static junit.framework.Assert.assertEquals;
+import static junit.framework.Assert.assertTrue;
 
 /**
  * Created by rob on 6/16/15.
@@ -142,6 +143,13 @@ public class PrimeNumberTest {
         }
 
 
+    }
+    @Test
+    public void printPrimeTest(){
+
+        PrimeNumber pn = new PrimeNumber();
+        pn.printPrime();
+        assertTrue(true);
     }
 
 }
