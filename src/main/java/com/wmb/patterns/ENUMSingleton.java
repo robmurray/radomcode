@@ -3,8 +3,6 @@ package com.wmb.patterns;
 public enum ENUMSingleton {
     INSTANCE;
 
-
-
     ENUMSingleton(){
 
     }

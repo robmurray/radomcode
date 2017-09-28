@@ -7,8 +7,6 @@ package com.wmb.prime;
  */
 public class PrimeNumber {
 
-
-
     public void printPrime(){
 
         for(int counter = 2;counter<Integer.MAX_VALUE;counter++){
@@ -52,7 +50,7 @@ public class PrimeNumber {
         if(number == 2 || number ==3 ){
             return true;
         }
-        // if even and not 2 it's prime
+        // if even and not 2 it's not prime
         if(number%2==0){
             return false;
         }
@@ -82,7 +80,7 @@ public class PrimeNumber {
         if(number == 2 || number ==3 ){
             return true;
         }
-        // if even and not 2 it's prime
+        // if even and not 2 it's not prime
         if(number%2==0){
             return false;
         }
